@@ -1,0 +1,25 @@
+<h1>Seed Reviews</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>General Name, Variety</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <% #@posts.sort! {|x, y| x.general_name <=> y.general_name}.each do |post| %>
+  <% @posts.sort_by! {|p| p.general_name }.each do |post| %>
+    <tr>
+      <td><%= post.general_name %>, "<%= post.variety %>"</td>
+      <td><%= link_to 'Show', post, {:class => "btn btn-primary btn-xs"} %></td>
+      <td><%= link_to 'Edit', edit_post_path(post), {:class => "btn btn-info btn-xs", :id => "poo"} %></td>
+      <td><%= link_to 'Delete', post_path(post), {data: {confirm: 'Are you sure?', method: "delete"}, class: "btn btn-danger btn-xs" }%></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Create New Entry', new_post_path, class: "btn btn-success btn-lg", id: "Henry" %>
+

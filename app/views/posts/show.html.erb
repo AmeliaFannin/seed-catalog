@@ -1,0 +1,24 @@
+<p>
+  <h1><%= @post.general_name %>, "<%= @post.variety %>"</h1>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @post.start_date %><br>
+  <strong>Transplant Date:</strong>
+  <%= @post.transplant_date %><br>
+  <strong>Harvest Date:</strong>
+  <%= @post.harvest_date %>
+</p>
+
+<p>
+  <strong>Review:</strong><br>
+  <%= @post.review %>
+</p>
+
+<div>
+  <%= link_to 'Edit', edit_post_path(@post), {:class => "btn btn-warning btn-xs"} %><br>
+  <%= link_to "Return to Index", posts_path, {:class => "btn btn-primary btn-xs"} %>
+</div>
+
+
